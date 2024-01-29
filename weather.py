@@ -5,11 +5,9 @@ import os
 load_dotenv()
 
 def get_weather_info():
-    # Replace 'your_api_key' with your actual OpenWeatherMap API key
     api_key = os.getenv("OPENWEATHER_API_KEY")
 
-    # Replace 'Namur' with the actual city name and 'BE' with the country code for Belgium
-    city_name = 'Namur'
+    city_name = 'Brussels'
     country_code = 'BE'
 
     # API endpoint URL
@@ -23,7 +21,7 @@ def get_weather_info():
         # Parse the JSON response
         data = response.json()
 
-        # Convert temperature from Kelvin to Celsius
+        # Converting temperature from Kelvin to Celsius
         temperature_kelvin = data['main']['temp']
         temperature_celsius = temperature_kelvin - 273.15
 
