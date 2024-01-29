@@ -11,7 +11,6 @@ load_dotenv()
 # Run the function to get weather information
 question = get_weather_info()
 
-# Continue with the rest of your main.py script
 api_key = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=api_key)
