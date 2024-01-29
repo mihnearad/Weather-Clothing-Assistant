@@ -12,11 +12,11 @@ def send_email(subject, openai_response, to_address, attachment_path=None):
     smtp_server = "smtp.gmail.com"
     smtp_port = 465
 
-    # Your Gmail credentials
+    # Gmail credentials
     sender_email = os.getenv("GMAIL_USER")
     sender_password = os.getenv("GMAIL_PASS")
 
-    # Create a MIME object for the email
+    # Created a MIME object for the email
     message = MIMEMultipart()
     message["From"] = sender_email
     message["To"] = to_address
@@ -25,7 +25,7 @@ def send_email(subject, openai_response, to_address, attachment_path=None):
     # Attach OpenAI response as text
     message.attach(MIMEText(openai_response, "plain"))
 
-    # Attach attachment if provided
+    # Attach attachment (if I need it for the future)
     if attachment_path:
         with open(attachment_path, "rb") as attachment:
             part = MIMEApplication(attachment.read(), Name="attachment")
