@@ -24,10 +24,12 @@ def get_weather_info():
         # Converting temperature from Kelvin to Celsius
         temperature_kelvin = data['main']['temp']
         temperature_celsius = temperature_kelvin - 273.15
+        current_humidity = data['main']['humidity']
 
         # Access and print relevant information from the response
         description = data['weather'][0]['description']
-        question = (f"How should I dress for {temperature_celsius:.2f}°C with {description}?")
+        question = (f"How should I dress for {temperature_celsius:.2f}°C with {description} and {current_humidity}% humidity?")
+
         return question
     else:
         # Print an error message if the request was not successful
